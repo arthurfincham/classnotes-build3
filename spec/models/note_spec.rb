@@ -16,10 +16,18 @@ RSpec.describe Note, type: :model do
   end
 
   describe '#tags' do
+    before do
+      @note = create(:note)
+      @note.tag_list.add('test_tag')
+    end
+
     it 'can take tags' do
-      note = create(:note)
-      note.tag_list.add('test_tag')
-      expect(note.tag_list).to include('test_tag')
+      expect(@note.tag_list).to include('test_tag')
+    end
+
+    it 'can have a tag removed' do
+      @note.tag_list.remove('test_tag')
+      expect(@note.tag_list).to_not include('test_tag')
     end
   end
 end
