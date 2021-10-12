@@ -14,6 +14,10 @@ RSpec.describe Note, type: :model do
     it { should validate_presence_of(:description) }
   end
 
+  describe "#user_id" do
+    it { should validate_presence_of(:user_id) }
+  end
+
   it 'is valid with valid attributes' do
     note = create(:note)
     expect(note).to be_valid
