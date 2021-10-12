@@ -2,28 +2,23 @@ require 'rails_helper'
 
 RSpec.describe Note, type: :model do
   
-  describe "#title" do
+  describe "#validations" do
     it { should validate_presence_of(:title) }
-  end
-
-  describe "#date" do
     it { should validate_presence_of(:date) }
-  end
-
-  describe "#description" do
     it { should validate_presence_of(:description) }
-  end
-
-  describe "#user_id" do
     it { should validate_presence_of(:user_id) }
-  end
-
-  describe 'associations' do
     it { is_expected.to belong_to(:user) }
+    it 'is valid with valid attributes' do
+      note = create(:note)
+      expect(note).to be_valid
+    end
   end
 
-  it 'is valid with valid attributes' do
-    note = create(:note)
-    expect(note).to be_valid
+  describe "#tags" do
+    it 'can take tags' do
+      note = create(:note)
+      note.tag_list.add("test_tag")
+      expect(note.tag_list).to include("test_tag")
+    end
   end
 end
