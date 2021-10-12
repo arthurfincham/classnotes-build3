@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "Notes", type: :request do
+
   describe "GET /index" do
-    it "returns http success" do
+    it "directs client to sign in" do
       get "/notes/index"
-      expect(response).to have_http_status(:success)
+      expect(response).to redirect_to(new_user_session_path)
     end
   end
-
 end
