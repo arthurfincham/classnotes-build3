@@ -7,6 +7,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'shoulda-matchers'
+require 'faker'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

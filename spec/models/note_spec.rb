@@ -18,8 +18,7 @@ RSpec.describe Note, type: :model do
     it { should validate_presence_of(:user_id) }
   end
 
-  it 'is valid with valid attributes' do
-    note = create(:note)
-    expect(note).to be_valid
+  describe 'associations' do
+    it { is_expected.to belong_to(:user) }
   end
 end
