@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Notes', type: :request do
-  describe 'GET /index' do
+  describe 'before sign in GET /index' do
     it 'directs client to sign in' do
       get '/notes/index'
       expect(response).to redirect_to(new_user_session_path)
