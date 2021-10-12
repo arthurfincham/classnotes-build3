@@ -6,6 +6,14 @@ class NotesController < ApplicationController
 
   def index; end
 
+  def new
+    @note = current_user.notes.new
+  end
+
+  def create
+    @note = current_user.notes.new(note_params)
+  end
+
   private
 
   def set_notes
@@ -14,5 +22,9 @@ class NotesController < ApplicationController
              else
                current_user.notes.order(date: :desc)
              end
+  end
+
+  def note_params
+     params.require(:note).permit(:date, :title, :instructor, :description, :tag_list)
   end
 end
