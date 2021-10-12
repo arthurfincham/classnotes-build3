@@ -27,6 +27,7 @@ group :development, :test do
   gem 'rubocop-rspec'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'rails-controller-testing'
+  gem 'launchy'
 end
 
 group :test do
@@ -35,6 +36,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'webdrivers'
+  gem 'webrick'
 end
 
 group :development do
