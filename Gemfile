@@ -27,6 +27,7 @@ group :test do
   gem 'webdrivers'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
