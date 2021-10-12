@@ -1,0 +1,8 @@
+<%= simple_form_for @note do |note| %>
+  <%= note.date_field :date %>
+  <%= note.input :title, label: 'class'%>
+  <%= note.input :instructor, label: 'instructor'%>
+  <%= note.input :description, label: 'description'%>
+  <%= note.input :tag_list, label: 'tags (seperated by commas)'%>
+  <%= note.button :submit %>
+<% end %>
