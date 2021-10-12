@@ -21,10 +21,23 @@ RSpec.describe NotesController, type: :controller do
   end
 
   context "POST #create" do
+    it 'saves the note to db' do
+      expect{ FactoryBot.create(:note) }.to change { Note.count }.by(1)
+    end
+
     it "redirects to notes page" do
       params = { title: "Test Note", date: "2021-12-31", description: "A test description for a note in controller spec." }
       post :create, params: { note: params }
       expect(response).to redirect_to(root_path)
     end
   end
+
+  context "#destroy" do
+    it 'can destroy a note' do
+      note = FactoryBot.create(:note)
+      expect{ note.destroy }.to change { Note.count }.by(-1)
+    end
+  end
+
+
 end
