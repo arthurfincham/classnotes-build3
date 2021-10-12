@@ -4,4 +4,5 @@ class Note < ApplicationRecord
   validates :description, presence: true, length: { minimum: 10, maximum: 300 }
   belongs_to :user, required: true
   validates :user_id, presence: true
+  acts_as_taggable_on :tags
 end
