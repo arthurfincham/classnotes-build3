@@ -9,6 +9,7 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'shoulda-matchers'
+require 'selenium-webdriver'
 require 'faker'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
