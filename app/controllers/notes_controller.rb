@@ -12,6 +12,11 @@ class NotesController < ApplicationController
 
   def create
     @note = current_user.notes.new(note_params)
+    if @note.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
