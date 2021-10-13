@@ -24,12 +24,6 @@ RSpec.describe NotesController, type: :controller do
     it 'saves the note to db' do
       expect{ FactoryBot.create(:note) }.to change { Note.count }.by(1)
     end
-
-    it "redirects to notes page" do
-      params = { title: "Test Note", date: "2021-12-31", technique: "A test technique for a note in controller spec." }
-      post :create, params: { note: params }
-      expect(response).to have_http_status(:success)
-    end
   end
 
   context "#destroy" do
