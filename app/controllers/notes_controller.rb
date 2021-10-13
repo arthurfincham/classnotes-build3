@@ -48,7 +48,7 @@ class NotesController < ApplicationController
   end
 
   def note_params
-     params.require(:note).permit(:date, :title, :instructor, :description, :tag_list)
+     params.require(:note).permit(:date, :title, :instructor, :techique, :sparring, :partner, :tag_list)
   end
 
   def set_note
