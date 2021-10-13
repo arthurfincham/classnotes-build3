@@ -20,18 +20,18 @@ RSpec.describe NotesController, type: :controller do
     end
   end
 
-  context "POST #create" do
-    it 'saves the note to db' do
-      expect{ FactoryBot.create(:note) }.to change { Note.count }.by(1)
-    end
-  end
+  # context "POST #create" do
+  #   it 'saves the note to db' do
+  #     expect{ FactoryBot.create(:note) }.to change { Note.count }.by(1)
+  #   end
+  # end
 
-  context "#destroy" do
-    it 'can destroy a note' do
-      note = FactoryBot.create(:note)
-      expect{ note.destroy }.to change { Note.count }.by(-1)
-    end
-  end
+  # context "#destroy" do
+  #   it 'can destroy a note' do
+  #     note = FactoryBot.create(:note)
+  #     expect{ note.destroy }.to change { Note.count }.by(-1)
+  #   end
+  # end
 
 
 end

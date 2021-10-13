@@ -22,7 +22,6 @@ gem 'rake'
 group :development, :test do
   gem 'awesome_print'
   gem 'factory_bot_rails'
-  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   gem 'rspec-rails'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
