@@ -5,7 +5,9 @@ class NotesController < ApplicationController
   before_action :set_note, only: %i[edit update destroy show]
   before_action :set_notes
 
-  def index; end
+  def index
+    @note = current_user.notes.new
+  end
 
   def new
     @note = current_user.notes.new
@@ -48,7 +50,7 @@ class NotesController < ApplicationController
   end
 
   def note_params
-     params.require(:note).permit(:date, :title, :instructor, :techique, :sparring, :partner, :tag_list)
+     params.require(:note).permit(:date, :title, :instructor, :technique, :sparring, :partner, :tag_list)
   end
 
   def set_note

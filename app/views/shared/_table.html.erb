@@ -8,6 +8,17 @@
     </tr>
   </thead>
   <tbody>
+
+  <tr class="index_new_note">
+  <%= simple_form_for @note do |f| %>
+    <td class="class_col"><%= f.date_field :date , label: false %><br><div class="notetitle"><%= f.input :title, placeholder: 'class', label: false %></div><div class="index-instructor"><%= f.input :instructor, placeholder: 'instructor', label: false %></td>
+    <td id="index_tag_input"><%= f.input :tag_list, placeholder: '#tag', label: false %><%= f.input :tag_list, placeholder: '#tag', label: false %><%= f.input :tag_list, placeholder: '#tag', label: false %></td>
+    <td><%= f.input :technique, as: :text, placeholder: 'technique' , label: false %></td>
+    <td><%= f.input :sparring, as: :text, placeholder: 'sparring' , label: false%></td>
+    <td><%= f.submit '+', class: 'index_create_note' %></td>
+    <% end %>
+  </tr>
+
     <% @notes.each do |note| %>
     <tr data-link="<%= edit_note_path(note)%>", class= "index-table-rows">
       <td><%= format_date(note) %><br><div class="notetitle"><%= format_title(note) %></div><div class="index-instructor"><%= note.instructor.downcase%></td>
@@ -15,7 +26,8 @@
         <button class="tag-badge"><%= "##{tag}" %></button><br>
       <% end %></td>
       <td><%= truncate(note.technique, :length => 200, :separator => '') %></td>
-      <td><%= truncate(note.sparring, :length => 200, :separator => '') %></td>  
+      <td><%= truncate(note.sparring, :length => 200, :separator => '') %></td>
+      <td><i class="bi bi-eye-fill"></i></td>
     </tr>
     <% end %>
   </tbody>
