@@ -7,8 +7,7 @@ module NotesHelper
     note.date.strftime("%a #{note.date.day.ordinalize} %b")
   end
 
-  def table_header
-    url = request.path_info
+  def table_header(url)
     if url.include? 'tags'
       request[:tag].parameterize(separator: '_')
     elsif url.include? 'notes/new'
