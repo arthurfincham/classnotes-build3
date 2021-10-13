@@ -5,6 +5,7 @@
       <th scope="col"><h1>Tags</h1></th>
       <th scope="col"><h1>Technique</h1></th>
       <th scope="col"><h1>Sparring</h1></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -13,8 +14,8 @@
   <%= simple_form_for @note do |f| %>
     <td class="class_col"><%= f.date_field :date , label: false %><br><div class="notetitle"><%= f.input :title, placeholder: 'class', label: false %></div><div class="index-instructor"><%= f.input :instructor, placeholder: 'instructor', label: false %></td>
     <td id="index_tag_input"><%= f.input :tag_list, placeholder: '#tag', label: false %><%= f.input :tag_list, placeholder: '#tag', label: false %><%= f.input :tag_list, placeholder: '#tag', label: false %></td>
-    <td><%= f.input :technique, as: :text, placeholder: 'technique' , label: false %></td>
-    <td><%= f.input :sparring, as: :text, placeholder: 'sparring' , label: false%></td>
+    <td><%= f.input :technique, as: :text, placeholder: 'technique' , label: false, :input_html => {:rows => 3} %></td>
+    <td><%= f.input :sparring, as: :text, placeholder: 'sparring' , label: false, :input_html => {:rows => 3}%></td>
     <td><%= f.submit '+', class: 'index_create_note' %></td>
     <% end %>
   </tr>
@@ -27,7 +28,7 @@
       <% end %></td>
       <td><%= truncate(note.technique, :length => 200, :separator => '') %></td>
       <td><%= truncate(note.sparring, :length => 200, :separator => '') %></td>
-      <td><i class="bi bi-eye-fill"></i></td>
+      <td></td>
     </tr>
     <% end %>
   </tbody>
