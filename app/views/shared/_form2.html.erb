@@ -1,0 +1,22 @@
+<div class="note-form-wrapper">
+  <%= simple_form_for @note do |f| %>
+  <div class="form_headers">
+    <%= f.date_field :date %>
+    <%= f.input :title, label: 'class'%>
+    <%= f.input :instructor, label: 'instructor'%>
+    <%= f.input :partner, label: 'partner'%>
+  </div>
+  <div class="tag_list_input">
+  <%= f.input :tag_list, label: 'tags (seperated by commas)'%>
+  </div>
+  <div class="form_group">
+    <%= f.input :technique, as: :text, label: 'technique' %>
+    <%= f.input :sparring, as: :text, label: 'sparring' %>
+  </div>
+  <%= f.button :submit %><br>
+  <% if request.path_info.include? 'notes' && 'edit' %>
+  <%= link_to "Delete", note_path(@note), method: :delete, data: {confirm: "Are you sure?"}, class: "btn", id: "delete-note"%>
+  <% end %>
+  <% end %>
+  
+</div>

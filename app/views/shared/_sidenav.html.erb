@@ -1,0 +1,82 @@
+<div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light">
+
+  <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+
+    <a href="" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <span class="fs-5 d-none d-sm-inline">Menu</span>
+    </a>
+
+    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+
+      <li class="nav-item">
+        <%= link_to new_note_path, method: :get, class: "nav-link align-middle px-0" do %>
+        <i class="fs-4 bi-pen"></i> <span class="ms-1 d-none d-sm-inline">New Note</span>
+        <% end %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to root_path, class: "nav-link align-middle px-0" do %>
+        <i class="fs-4 bi-journal"></i> <span class="ms-1 d-none d-sm-inline">All Notes</span>
+        <% end %>
+      </li>
+
+      <li>
+        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+          <i class="fs-4 bi-tags"></i> <span class="ms-1 d-none d-sm-inline">Tags</span> </a>
+        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+        <% tag_cloud @notes.tag_counts.order("tags.name"), %w[m] do |tag| %>
+          <li class="w-100">
+          <span class="d-none d-sm-inline"><%= link_to "#{tag.name.parameterize(separator: '_')}", tag_path(tag.name), class: "nav-link px-0"%></span>
+          </li>
+          <% end %>
+        </ul>
+      </li>
+
+
+      <li>
+        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+          <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Instructors</span></a>
+        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+        <% tag_cloud @notes.instructor_counts.order("tags.name"), %w[m] do |tag| %>
+          <li class="w-100">
+          <span class="d-none d-sm-inline"><%= link_to "#{tag.name.parameterize(separator: '_')}", instructor_path(tag.name), class: "nav-link px-0"%></span>
+          </li>
+          <% end %>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+          <i class="fs-4 bi-columns-gap"></i> <span class="ms-1 d-none d-sm-inline">Classes</span> </a>
+        <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+          <% tag_cloud @notes.note_title_counts.order("tags.name"), %w[m] do |tag| %>
+          <li class="w-100">
+          <span class="d-none d-sm-inline"><%= link_to "#{tag.name.parameterize(separator: '_')}", note_title_path(tag.name), class: "nav-link px-0"%></span>
+          </li>
+          <% end %>
+        </ul>
+      </li>
+
+
+    </ul>
+
+    <hr>
+    <div class="dropdown pb-4">
+      <a href="#" class="d-flex align-items-center text-gray text-decoration-none dropdown-toggle" id="dropdownUser1"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <img
+          src="https://www.pngitem.com/pimgs/m/421-4212266_transparent-default-avatar-png-default-avatar-images-png.png"
+          alt="hugenerd" width="30" height="30" class="rounded-circle">
+        <span class="d-none d-sm-inline mx-1"><%= current_user.username %></span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-light text-small shadow" aria-labelledby="dropdownUser1">
+        <li><a class="dropdown-item"><%= link_to "Profile Settings", edit_user_registration_path, method: :get %></a>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></a></a></li>
+      </ul>
+    </div>
+  </div>
+</div>

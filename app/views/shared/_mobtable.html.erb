@@ -1,0 +1,24 @@
+<table class="table w-auto" id="fixedheight-table">
+  <thead>
+    <tr>
+      <th scope="col">
+        <h1>Class</h1>
+      </th>
+
+      <th scope="col">
+        <h1>Summary</h1>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @notes.each do |note| %>
+    <tr data-link="<%= edit_note_path(note)%>">
+      <td class="table-vert-line"><%= format_date(note) %><br><p class="notetitle"><%= format_title(note)%></p><%= note.instructor.downcase%></td>
+      <td><%= truncate(note.technique, :length => 100, :separator => '') %><br><br><% format_tags(note).each do |tag| %>
+        <button class="tag-badge"><%= "##{tag}" %></button>
+      <% end %></td> 
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+

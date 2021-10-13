@@ -1,8 +1,5 @@
-<h1>Notes#index</h1>
-
-<% @notes.each do |note| %>
-  <%= note.title %>
-  <%= note.date %>
-  <%= note.description %>
-  <br><br>
+<% if mobile? %>
+<%= render 'shared/mobtable'%>
+<% else %>
+<%= render 'shared/table' %>
 <% end %>

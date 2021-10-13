@@ -1,0 +1,32 @@
+ <div id="mySidebar" class="sidebar">
+   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   <ul class="nav-top-links">
+     <li class="nav-item">
+       <%= link_to new_note_path, method: :get, class: "nav-link align-middle px-0" do %>
+       <span class="ms-1  d-sm-inline">New Note</span>
+       <% end %>
+     </li>
+
+     <li class="nav-item">
+       <%= link_to root_path, class: "nav-link align-middle px-0" do %>
+       <span class="ms-1  d-sm-inline">All Notes</span>
+       <% end %>
+     </li>
+
+   </ul>
+   <ul class="nav-bottom-links">
+     <li class="nav-item">
+       <%= link_to edit_user_registration_path, method: :get, class: "nav-link align-middle px-0" do %>
+       <span class="ms-1  d-sm-inline">Profile</span>
+       <% end %>
+     </li>
+
+     <li class="nav-item">
+       <%= link_to destroy_user_session_path, method: :delete, class: "nav-link align-middle px-0" do %>
+       <span class="ms-1  d-sm-inline">Sign Out</span>
+       <% end %>
+     </li>
+
+   </ul>
+
+ </div>

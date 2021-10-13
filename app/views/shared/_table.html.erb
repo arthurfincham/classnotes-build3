@@ -1,0 +1,22 @@
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col"><h1>Class</h1></th>
+      <th scope="col"><h1>Tags</h1></th>
+      <th scope="col"><h1>Technique</h1></th>
+      <th scope="col"><h1>Sparring</h1></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @notes.each do |note| %>
+    <tr data-link="<%= edit_note_path(note)%>", class= "index-table-rows">
+      <td><%= format_date(note) %><br><div class="notetitle"><%= format_title(note) %></div><div class="index-instructor"><%= note.instructor.downcase%></td>
+      <td><% format_tags(note).each do |tag| %>
+        <button class="tag-badge"><%= "##{tag}" %></button><br>
+      <% end %></td>
+      <td><%= truncate(note.technique, :length => 200, :separator => '') %></td>
+      <td><%= truncate(note.sparring, :length => 200, :separator => '') %></td>  
+    </tr>
+    <% end %>
+  </tbody>
+</table>

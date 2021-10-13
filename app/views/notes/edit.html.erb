@@ -1,11 +1,1 @@
-<%= simple_form_for @note do |note| %>
-  <%= note.date_field :date %>
-  <%= note.input :title, label: 'class'%>
-  <%= note.input :instructor, label: 'instructor'%>
-  <%= note.input :description, label: 'description'%>
-  <%= note.input :tag_list, label: 'tags (seperated by commas)'%>
-  <%= note.button :submit %>
-  <% if request.path_info.include? 'notes' && 'edit' %>
-    <%= link_to "Delete", note_path(@note), method: :delete, data: {confirm: "Are you sure?"}, class: "btn", id: "delete-note"%>
-  <% end %>
-<% end %>
+<%= render 'shared/form2' %>
