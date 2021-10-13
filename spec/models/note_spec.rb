@@ -6,7 +6,6 @@ RSpec.describe Note, type: :model do
   describe '#validations' do
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:date) }
-    it { should validate_presence_of(:description) }
     it { should validate_presence_of(:user_id) }
     it { is_expected.to belong_to(:user) }
     it 'is valid with valid attributes' do
