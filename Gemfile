@@ -28,7 +28,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'rails-controller-testing'
   gem 'launchy'
-  gem 'rake'
+gem 'rake', '~> 12.3', '>= 12.3.1'
 end
 
 group :test do
