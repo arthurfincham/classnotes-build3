@@ -11,11 +11,28 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-      <%= render 'shared/nav' %>
-    <% end %>
-    <%= yield %>
-  </body>
+  <%# SIDEBAR %>
+ 
+<% if user_signed_in? %>
+ <%= render 'shared/nav2' %>
+  <div id="main">
+  <%= render 'shared/topnav' %>
+  <% end %>
+  <%= yield %>
+  </div>
+<script>
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+  
+</body>
 </html>
