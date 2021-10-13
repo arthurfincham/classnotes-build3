@@ -615,3 +615,33 @@ h1 {
 }
 
 /* #endregion */
+
+
+#index_tag_input > * {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.index_new_note :nth-child(1){
+  border: none !important;
+}
+
+.index_new_note :nth-child(1):focus{
+  outline-color: #FA7F1C;
+}
+
+
+.index_create_note{
+  background: none;
+  font-size: 30px;
+}
+
+.class_col > * {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#note_title {
+  margin-bottom: 2px;
+  width: 90%;
+}
