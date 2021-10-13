@@ -17,7 +17,7 @@ gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
 gem 'simple_form'
 gem 'travis'
-gem 'rake'
+
 
 group :development, :test do
   gem 'awesome_print'
@@ -28,6 +28,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'rails-controller-testing'
   gem 'launchy'
+  gem 'rake'
 end
 
 group :test do
