@@ -26,9 +26,9 @@ RSpec.describe NotesController, type: :controller do
     end
 
     it "redirects to notes page" do
-      params = { title: "Test Note", date: "2021-12-31", description: "A test description for a note in controller spec." }
+      params = { title: "Test Note", date: "2021-12-31", technique: "A test technique for a note in controller spec." }
       post :create, params: { note: params }
-      expect(response).to redirect_to(root_path)
+      expect(response).to have_http_status(:success)
     end
   end
 
