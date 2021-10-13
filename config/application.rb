@@ -15,6 +15,7 @@ module ClassnotesBuild3
 
     # Configuration for the application, engines, and railties goes here.
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join('app', 'assets', 'images')
 
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
