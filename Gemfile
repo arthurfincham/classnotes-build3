@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.3'
+ruby '3.0.2'
 gem 'acts-as-taggable-on', '~> 8.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
@@ -28,7 +28,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'rails-controller-testing'
   gem 'launchy'
-gem 'rake', '~> 12.3', '>= 12.3.1'
+gem 'rake', '~> 13.0.6'
 end
 
 group :test do
