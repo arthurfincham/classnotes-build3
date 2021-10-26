@@ -1,3 +1,6 @@
+<div class="table_page_container">
+<%= render 'shared/table_tag_cloud' %>
+<div class="table_container">
 <table class="table" >
   <thead>
     <tr>
@@ -26,11 +29,13 @@
       <td><% format_tags(note).each do |tag| %>
         <button class="tag-badge"><%= "##{tag}" %></button><br>
       <% end %></td>
-      <td><%= truncate(note.technique, :length => 200, :separator => '') %></td>
-      <td><%= truncate(note.sparring, :length => 200, :separator => '') %></td>
+      <td><%= truncate(note.technique, :length => 100, :separator => '') %></td>
+      <td><%= truncate(note.sparring, :length => 100, :separator => '') %></td>
       <td></td>
     </tr>
     <% end %>
   </tbody>
 </table>
 <%= will_paginate @notes, :page_links => false%>
+</div>
+</div>
