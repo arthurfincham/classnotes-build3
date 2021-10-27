@@ -189,7 +189,8 @@ td {
 .nav-top-links {
   position: relative;
   top: 0;
-  overflow-y: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
   line-height: 4vh;
 }
 
@@ -365,7 +366,8 @@ a.nav-tag {
   #dynamic-title {
     font-size: 3em;
     position: relative;
-    display: block;
+    display: inline-block;
+    vertical-align: middle;
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -656,4 +658,47 @@ h1 {
 .index_text_fields{
   height: 100% !important;
   min-height: 100%;
+}
+
+.tag_section{
+  width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#tagCloudCollapse{
+  margin: 0 auto !important;
+  width: 80%
+}
+
+#tagcloudBody{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#tag_cloud_toggle{
+  font-family: 'BiotifBlack';
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 0;
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
+#tag_cloud_toggle:focus{
+  box-shadow: none;
+}
+.tag-cloud-badge{
+  color: black !important;
+  text-decoration: none;
+}
+
+.tag-cloud-badge:hover{
+  text-decoration: underline;
 }

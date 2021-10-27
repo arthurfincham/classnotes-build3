@@ -1,12 +1,11 @@
-<div class="dropdown">
-  <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-  +
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <% @notes.tag_counts.order("tags.name").each do |tag| %>
-     <li class="nav-item">
-       <%= link_to "##{tag.name.parameterize(separator: '_')}", tag_path(tag.name), class: "nav-tag" %></li>
-     <% end %>
-  </ul>
+<div class="tag_section">
+  <div class="collapse" id="tagCloudCollapse">
+    <div class="card card-body" id="tagcloudBody">
+      <% @notes.tag_counts.order("tags.name").each do |tag| %>
+      <li class="tag-badge">
+        <%= link_to "##{tag.name.parameterize(separator: '_')}", tag_path(tag.name), class: "tag-cloud-badge" %></li>
+      <% end %>
+    </div>
+  </div>
 </div>
 
