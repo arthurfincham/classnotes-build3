@@ -41,11 +41,11 @@ class NotesController < ApplicationController
 
   private
 
-  def set_notes
+   def set_notes
     @notes = if params[:tag]
-               current_user.notes.tagged_with(params[:tag]).order(date: :desc)
+               current_user.notes.tagged_with(params[:tag]).order(date: :desc).paginate(page: params[:page], per_page: 6)
              else
-               current_user.notes.order(date: :desc)
+               current_user.notes.order(date: :desc).paginate(page: params[:page], per_page: 6)
              end
   end
 

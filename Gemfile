@@ -17,7 +17,7 @@ gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
 gem 'simple_form'
 gem 'travis'
-
+gem 'will_paginate', '~> 3.3'
 
 group :development, :test do
   gem 'awesome_print'
