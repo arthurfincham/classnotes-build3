@@ -28,4 +28,14 @@ module NotesHelper
       tag.parameterize(separator: '_').downcase
     end
   end
+
+  def show_tag_toggle(url)
+    if url.include? 'notes/new'
+      false
+    elsif url.include? 'notes' && 'edit'
+      false
+    else
+      true
+    end
+  end
 end
