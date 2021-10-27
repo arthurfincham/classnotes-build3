@@ -1,0 +1,37 @@
+<div class="table_cloud">
+  <div class="title_headers">
+    <h1 id="dynamic-title"><%= table_header(request.path_info) %></h1>
+    <h1 class="classnotestitle">ClassNotes</h1>
+  </div>
+<ul class="nav-top-links">
+  <li class="nav-item">
+    <%= link_to new_note_path, method: :get, class: "nav-link align-middle px-0" do %>
+    <span class="ms-1  d-sm-inline">New Note</span>
+    <% end %>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to root_path, class: "nav-link align-middle px-0" do %>
+    <span class="ms-1  d-sm-inline">All Notes</span>
+    <% end %>
+  </li>
+
+</ul>
+  <% @notes.tag_counts.order("tags.name").each do |tag| %>
+  <%= link_to "##{tag.name.parameterize(separator: '_')}", tag_path(tag.name), class: "nav-tag" %>
+  <% end %>
+  <ul class="nav-bottom-links">
+    <li class="nav-item">
+      <%= link_to edit_user_registration_path, method: :get, class: "nav-link align-middle px-0" do %>
+      <span class="ms-1  d-sm-inline">Profile</span>
+      <% end %>
+    </li>
+
+    <li class="nav-item">
+      <%= link_to destroy_user_session_path, method: :delete, class: "nav-link align-middle px-0" do %>
+      <span class="ms-1  d-sm-inline">Sign Out</span>
+      <% end %>
+    </li>
+
+  </ul>
+</div>

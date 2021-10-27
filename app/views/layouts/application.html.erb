@@ -13,11 +13,7 @@
   <body>
   <%# SIDEBAR %>
  
-<% if user_signed_in? %>
- <%= render 'shared/nav2' %>
   <div id="main">
-  <%= render 'shared/topnav' %>
-  <% end %>
   <%= yield %>
   </div>
 <script>

@@ -41,6 +41,7 @@
 
 body {
   height: 100vh;
+  width: 100vw;
 }
 
 tr {
@@ -59,6 +60,21 @@ tr {
 
 /* #region TABLE */
 
+.table_page_container{
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+   margin: 0 auto !important;
+   padding-left: 3vw;
+}
+
+.table_container{
+  display: flex;
+  flex-direction: column;
+  width: 80% !important;
+  margin-left: 5vw;
+}
+
 table {
   margin-top: 1vh;
   margin-right: 5vw;
@@ -66,10 +82,15 @@ table {
 
 @media only screen and (min-device-width: 480px) {
   table {
-    width: 90vw !important;
-    margin: 0 auto !important;
+    
     background-color: white;
   }
+}
+
+.table_cloud{
+  width: 20%;
+background-image: asset-url("noise.png");
+  background-size: 150px 150px;
 }
 
 
@@ -189,7 +210,6 @@ td {
 .nav-top-links {
   position: relative;
   top: 0;
-  overflow-y: scroll;
   line-height: 4vh;
 }
 
@@ -371,19 +391,6 @@ a.nav-tag {
     display: flex;
     flex-direction: row;
   }
-}
-
-.dropdown-toggle::after {
-  display: none;
-}
-
-#dropdownMenuButton1 {
-  background: none;
-  border: none;
-  font-size: 40px;
-  color: #FA7F1C;
-  padding: 0 0 0 0;
-  margin: 0 0 0 20px;
 }
 
 .btn-check:focus+.btn-secondary, .btn-secondary:focus {
@@ -656,4 +663,28 @@ h1 {
 .index_text_fields{
   height: 100% !important;
   min-height: 100%;
+}
+
+#note_technique, #note_sparring {
+  width: 100%;
+  padding: 5px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.pagination{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding-top: 5px;
+  width: inherit;
+  justify-content: space-between;
+}
+
+.title_headers{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }
