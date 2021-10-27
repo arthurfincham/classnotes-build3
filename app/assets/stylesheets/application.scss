@@ -702,3 +702,20 @@ h1 {
 .tag-cloud-badge:hover{
   text-decoration: underline;
 }
+
+#note_technique, #note_sparring {
+  width: 100%;
+  padding: 5px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.pagination{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding-top: 5px;
+  width: inherit;
+  justify-content: space-between;
+}
